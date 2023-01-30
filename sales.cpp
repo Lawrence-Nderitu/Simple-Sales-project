@@ -30,6 +30,8 @@ void sales_management::add_item()
 {
 	sales_management sm;
 
+    system("clear");
+
 	fstream fout;
 	fout.open("Items.csv", ios::out | ios::app);
 
