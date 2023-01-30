@@ -28,8 +28,6 @@ public:
 
 void sales_management::add_item()
 {
-	system("clear");
-
 	sales_management sm;
 
 	fstream fout;
@@ -471,16 +469,10 @@ void sales_management::menu()
                             {
                                 if (entered_id != sm.id)
                                 {    
-                                    system("clear");
-
                                     sales_management sm;
                                     
                                     fstream fout;
                                     fout.open("Items.csv", ios::out | ios::app);
-
-                                    cout << "\t\t\t+--------------------------------------+";
-                                    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                                    cout << "\n\t\t\t+--------------------------------------+";
 
                                     cout << "\n\n\t\t\tEnter Item Name: ";
                                     cin >> sm.item;
