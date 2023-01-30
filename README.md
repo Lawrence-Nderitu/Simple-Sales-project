@@ -7,7 +7,7 @@ For Debian Users Simply Run
 
 g++ sales.cpp -o sales && ./sales.
 
-For other systems you use your normal IDE to compile the .cpp file.
+For other systems use your normal IDE to compile the .cpp file.
 
 What's missing?
 
