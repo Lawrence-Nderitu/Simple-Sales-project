@@ -28,14 +28,14 @@ public:
 
 void sales_management::add_item()
 {
-	sales_management sm;
-
     system("clear");
 
-	fstream fout;
-	fout.open("Items.csv", ios::out | ios::app);
+    sales_management sm;
 
-	cout << "\t\t\t+--------------------------------------+";
+    fstream fout;
+    fout.open("Items.csv", ios::out | ios::app);
+
+    cout << "\t\t\t+--------------------------------------+";
     cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
     cout << "\n\t\t\t+--------------------------------------+";
 
@@ -64,14 +64,6 @@ void sales_management::display_items()
     system("clear");
 
     sales_management sm;
-
-    cout << "\t\t\t+--------------------------------------+";
-    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-    cout << "\n\t\t\t+--------------------------------------+";
-
-    cout << "\n\n\t\t+------+-------------+---------+";
-    cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-    cout << "\n\t\t+------+-------------+---------+";
 
     const char separator = ' ';
     const int idwidth = 6;
@@ -103,6 +95,14 @@ void sales_management::display_items()
                 sm.item = row[1];
                 sm.cost = stod(row[2]);
 
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
+                cout << "\n\n\t\t+------+-------------+---------+";
+                cout << "\n\t\t| ID   |     ITEM    |   COST  |";
+                cout << "\n\t\t+------+-------------+---------+";
+
                 for (int i = 0; i < 1; ++i)
                 {
 
@@ -112,6 +112,20 @@ void sales_management::display_items()
 
                     cout << "\n\t\t+------+-------------+---------+";
                 }
+            }
+            else
+            {
+                system("clear");
+
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
+                cout << "\n\n\t\t\tNo Items To Display...";
+
+                cin.ignore();
+                cin.get();
+                sm.menu();
             }
         }
     }
@@ -175,10 +189,6 @@ void sales_management::search_item()
 
     sales_management sm;
 
-   cout << "\t\t\t+--------------------------------------+";
-    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-    cout << "\n\t\t\t+--------------------------------------+";
-
     const char separator = ' ';
     const int idwidth = 6;
     const int itwidth = 13;
@@ -213,11 +223,15 @@ void sales_management::search_item()
                 sm.item = row[1];
                 //sm.cost = stod(row[2]);
 
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
                 for (int i = 0; i < 1; ++i)
                 {
                     if (entered_name == sm.item)
                     {
-                        cout << "\n\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t+------+-------------+---------+";
                         cout << "\n\t\t| ID   |     ITEM    |   COST  |";
                         cout << "\n\t\t+------+-------------+---------+";
 
@@ -228,6 +242,20 @@ void sales_management::search_item()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
+            }
+            else
+            {
+                system("clear");
+
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
+                cout << "\n\n\t\t\tNo Items To Display...";
+
+                cin.ignore();
+                cin.get();
+                sm.menu();
             }
         }
     }
@@ -248,10 +276,6 @@ void sales_management::search_id()
     system("clear");
 
     sales_management sm;
-
-   cout << "\t\t\t+--------------------------------------+";
-    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-    cout << "\n\t\t\t+--------------------------------------+";
 
     const char separator = ' ';
     const int idwidth = 6;
@@ -287,11 +311,15 @@ void sales_management::search_id()
                 //sm.item = row[1];
                 //sm.cost = stod(row[2]);
 
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
                 for (int i = 0; i < 1; ++i)
                 {
                     if (entered_id == sm.id)
                     {
-                        cout << "\n\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t+------+-------------+---------+";
                         cout << "\n\t\t| ID   |     ITEM    |   COST  |";
                         cout << "\n\t\t+------+-------------+---------+";
 
@@ -302,6 +330,20 @@ void sales_management::search_id()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
+            }
+            else
+            {
+                system("clear");
+
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
+                cout << "\n\n\t\t\tNo Items To Display...";
+
+                cin.ignore();
+                cin.get();
+                sm.menu();
             }
         }
     }
@@ -322,10 +364,6 @@ void sales_management::search_cost()
     system("clear");
 
     sales_management sm;
-
-    cout << "\t\t\t+--------------------------------------+";
-    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-    cout << "\n\t\t\t+--------------------------------------+";
 
     const char separator = ' ';
     const int idwidth = 6;
@@ -361,11 +399,15 @@ void sales_management::search_cost()
                 //sm.item = row[1];
                 sm.cost = stod(row[2]);
 
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
                 for (int i = 0; i < 1; ++i)
                 {
                     if (entered_cost == sm.cost)
                     {
-                        cout << "\n\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t+------+-------------+---------+";
                         cout << "\n\t\t| ID   |     ITEM    |   COST  |";
                         cout << "\n\t\t+------+-------------+---------+";
 
@@ -376,6 +418,20 @@ void sales_management::search_cost()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
+            }
+            else
+            {
+                system("clear");
+
+                cout << "\t\t\t+--------------------------------------+";
+                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                cout << "\n\t\t\t+--------------------------------------+";
+
+                cout << "\n\n\t\t\tNo Items To Display...";
+
+                cin.ignore();
+                cin.get();
+                sm.menu();
             }
         }
     }
