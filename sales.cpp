@@ -393,12 +393,12 @@ void sales_management::search_cost()
 
 void sales_management::menu()
 {
-	system("clear");
+    system("clear");
 
-	sales_management sm;
-	int choice;
+    sales_management sm;
+    int choice;
 
-	cout << "\t\t\t+--------------------------------------+";
+    cout << "\t\t\t+--------------------------------------+";
     cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
     cout << "\n\t\t\t+--------------------------------------+";
 
@@ -411,8 +411,8 @@ void sales_management::menu()
 
     switch(choice)
     {
-    	case 1:
-    	{
+        case 1:
+        {
             system("clear");
 
             sales_management sm;
@@ -428,13 +428,6 @@ void sales_management::menu()
 
             fstream fin;
             fin.open("Items.csv", ios::in | ios::app);
-
-            cout << "\t\t\t+--------------------------------------+";
-            cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-            cout << "\n\t\t\t+--------------------------------------+";
-
-            cout << "\n\n\t\t\tEnter Item ID: ";
-            cin >> entered_id;
 
             if (fin.good())
             {
@@ -453,6 +446,13 @@ void sales_management::menu()
                     if (row.size() > 1)
                     {
                         sm.id = stoi(row[0]);
+
+                        cout << "\t\t\t+--------------------------------------+";
+                        cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                        cout << "\n\t\t\t+--------------------------------------+";
+
+                        cout << "\n\n\t\t\tEnter Item ID: ";
+                        cin >> entered_id;
                        
                         for (int i = 0; i < 1; ++i)
                         {
@@ -466,15 +466,48 @@ void sales_management::menu()
                                 cin.get();
 
                                 sm.menu();
+                            }
+                            else
+                            {
+                                if (entered_id != sm.id)
+                                {    
+                                    system("clear");
+
+                                    sales_management sm;
+                                    
+                                    fstream fout;
+                                    fout.open("Items.csv", ios::out | ios::app);
+
+                                    cout << "\t\t\t+--------------------------------------+";
+                                    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+                                    cout << "\n\t\t\t+--------------------------------------+";
+
+                                    cout << "\n\n\t\t\tEnter Item Name: ";
+                                    cin >> sm.item;
+                                    cout << "\n\n\t\t\tEnter Item Cost: ";
+                                    cin >> sm.cost;
+
+                                    fout << entered_id << "," << sm.item << "," << sm.cost << endl;
+                                    fout.close();
+
+                                    cout << "\n\n\t\t\t\tItem Added Successfully..." << endl;
+                                    cout << "\n\t\t\t+-----------------------------------------+";
+
+                                    cout << "\n\n\t\t\t\tPress Enter To Continue..." << endl;
+
+                                    cin.ignore();
+                                    cin.get();
+                                    sm.menu();    
+                                }
                             }                                         
                         } 
                     }                                                  
                     
                 }               
             }
-
-            sm.add_item();
             
+            sm.add_item();
+
             fin.close();
 
             break;
@@ -485,15 +518,15 @@ void sales_management::menu()
         case 3:
             sm.search_menu();
             break;
-    	case 4:
-    		try
-    		{
-    			quick_exit(0);
-    		}
-    		catch(exception& e)
-    		{
-    			cout << e.what() << endl;
-    		}
+        case 4:
+            try
+            {
+                quick_exit(0);
+            }
+            catch(exception& e)
+            {
+                cout << e.what() << endl;
+            }
         default:
             cout << "\n\n\t\t\t\tInvalid choice..." << endl;
             cin.ignore();
