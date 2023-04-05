@@ -79,9 +79,9 @@ void sales_management::display_items()
     cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
     cout << "\n\t\t\t+--------------------------------------+";
 
-    cout << "\n\n\t\t+------+-------------+---------+";
-    cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-    cout << "\n\t\t+------+-------------+---------+";
+    cout << "\n\n\t\t\t+------+-------------+---------+";
+    cout << "\n\t\t\t| ID   |     ITEM    |   COST  |";
+    cout << "\n\t\t\t+------+-------------+---------+";
 
     if (fin.good())
     {
@@ -106,11 +106,11 @@ void sales_management::display_items()
                 for (int i = 0; i < 1; ++i)
                 {
 
-                    cout << "\n\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
+                    cout << "\n\t\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
                     cout << setw(itwidth) << setfill(separator) << row[1] << "|";
                     cout << setw(cowidth) << setfill(separator) << row[2] << "|";
 
-                    cout << "\n\t\t+------+-------------+---------+";
+                    cout << "\n\t\t\t+------+-------------+---------+";
                 }
             }
         }
@@ -217,15 +217,15 @@ void sales_management::search_item()
                 {
                     if (entered_name == sm.item)
                     {
-                        cout << "\n\t\t+------+-------------+---------+";
-                        cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t| ID   |     ITEM    |   COST  |";
+                        cout << "\n\t\t\t+------+-------------+---------+";
 
-                        cout << "\n\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
+                        cout << "\n\t\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
                         cout << setw(itwidth) << setfill(separator) << row[1] << "|";
                         cout << setw(cowidth) << setfill(separator) << row[2] << "|";
 
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
                     }                    
                 }
             }
@@ -291,15 +291,15 @@ void sales_management::search_id()
                 {
                     if (entered_id == sm.id)
                     {
-                        cout << "\n\t\t+------+-------------+---------+";
-                        cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t| ID   |     ITEM    |   COST  |";
+                        cout << "\n\t\t\t+------+-------------+---------+";
 
-                        cout << "\n\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
+                        cout << "\n\t\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
                         cout << setw(itwidth) << setfill(separator) << row[1] << "|";
                         cout << setw(cowidth) << setfill(separator) << row[2] << "|";
 
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
                     }                    
                 }
             }
@@ -365,15 +365,15 @@ void sales_management::search_cost()
                 {
                     if (entered_cost == sm.cost)
                     {
-                        cout << "\n\t\t+------+-------------+---------+";
-                        cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t| ID   |     ITEM    |   COST  |";
+                        cout << "\n\t\t\t+------+-------------+---------+";
 
-                        cout << "\n\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
+                        cout << "\n\t\t\t|" << setw(idwidth) << setfill(separator) << row[0] << "|";
                         cout << setw(itwidth) << setfill(separator) << row[1] << "|";
                         cout << setw(cowidth) << setfill(separator) << row[2] << "|";
 
-                        cout << "\n\t\t+------+-------------+---------+";
+                        cout << "\n\t\t\t+------+-------------+---------+";
                     }                    
                 }
             }
