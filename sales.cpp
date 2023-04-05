@@ -75,6 +75,14 @@ void sales_management::display_items()
     fstream fin;
     fin.open("Items.csv", ios::in | ios::app);
 
+    cout << "\t\t\t+--------------------------------------+";
+    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+    cout << "\n\t\t\t+--------------------------------------+";
+
+    cout << "\n\n\t\t+------+-------------+---------+";
+    cout << "\n\t\t| ID   |     ITEM    |   COST  |";
+    cout << "\n\t\t+------+-------------+---------+";
+
     if (fin.good())
     {
         while(!fin.eof())
@@ -95,14 +103,6 @@ void sales_management::display_items()
                 sm.item = row[1];
                 sm.cost = stod(row[2]);
 
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
-                cout << "\n\n\t\t+------+-------------+---------+";
-                cout << "\n\t\t| ID   |     ITEM    |   COST  |";
-                cout << "\n\t\t+------+-------------+---------+";
-
                 for (int i = 0; i < 1; ++i)
                 {
 
@@ -112,20 +112,6 @@ void sales_management::display_items()
 
                     cout << "\n\t\t+------+-------------+---------+";
                 }
-            }
-            else
-            {
-                system("clear");
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
-                cout << "\n\n\t\t\tNo Items To Display...";
-
-                cin.ignore();
-                cin.get();
-                sm.menu();
             }
         }
     }
@@ -200,7 +186,11 @@ void sales_management::search_item()
     fstream fin;
     fin.open("Items.csv", ios::in | ios::app);
 
-    cout << "\n\n\t\tEnter Item Name: ";
+    cout << "\t\t\t+--------------------------------------+";
+    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+    cout << "\n\t\t\t+--------------------------------------+";
+
+    cout << "\n\n\t\t\tEnter Item Name: ";
     cin >> entered_name;
 
     if (fin.good())
@@ -221,11 +211,7 @@ void sales_management::search_item()
             {
                 //sm.id = stoi(row[0]);
                 sm.item = row[1];
-                //sm.cost = stod(row[2]);
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
+                //sm.cost = stod(row[2]);                
 
                 for (int i = 0; i < 1; ++i)
                 {
@@ -242,20 +228,6 @@ void sales_management::search_item()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
-            }
-            else
-            {
-                system("clear");
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
-                cout << "\n\n\t\t\tNo Items To Display...";
-
-                cin.ignore();
-                cin.get();
-                sm.menu();
             }
         }
     }
@@ -288,7 +260,11 @@ void sales_management::search_id()
     fstream fin;
     fin.open("Items.csv", ios::in | ios::app);
 
-    cout << "\n\n\t\tEnter Item ID: ";
+    cout << "\t\t\t+--------------------------------------+";
+    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+    cout << "\n\t\t\t+--------------------------------------+";
+
+    cout << "\n\n\t\t\tEnter Item ID: ";
     cin >> entered_id;
 
     if (fin.good())
@@ -309,11 +285,7 @@ void sales_management::search_id()
             {
                 sm.id = stoi(row[0]);
                 //sm.item = row[1];
-                //sm.cost = stod(row[2]);
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
+                //sm.cost = stod(row[2]);                
 
                 for (int i = 0; i < 1; ++i)
                 {
@@ -330,20 +302,6 @@ void sales_management::search_id()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
-            }
-            else
-            {
-                system("clear");
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
-                cout << "\n\n\t\t\tNo Items To Display...";
-
-                cin.ignore();
-                cin.get();
-                sm.menu();
             }
         }
     }
@@ -371,12 +329,16 @@ void sales_management::search_cost()
     const int cowidth = 9;
     vector<string> row;
     string line, word;
-    double entered_cost;
+    float entered_cost;
 
     fstream fin;
     fin.open("Items.csv", ios::in | ios::app);
 
-    cout << "\n\n\t\tEnter Item Cost: ";
+    cout << "\t\t\t+--------------------------------------+";
+    cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
+    cout << "\n\t\t\t+--------------------------------------+";
+
+    cout << "\n\n\t\t\tEnter Item Cost: ";
     cin >> entered_cost;
 
     if (fin.good())
@@ -399,10 +361,6 @@ void sales_management::search_cost()
                 //sm.item = row[1];
                 sm.cost = stod(row[2]);
 
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
                 for (int i = 0; i < 1; ++i)
                 {
                     if (entered_cost == sm.cost)
@@ -418,20 +376,6 @@ void sales_management::search_cost()
                         cout << "\n\t\t+------+-------------+---------+";
                     }                    
                 }
-            }
-            else
-            {
-                system("clear");
-
-                cout << "\t\t\t+--------------------------------------+";
-                cout << "\n\t\t\t|--NDERITU'S STORE MANAGEMENT SYSTEM---|";
-                cout << "\n\t\t\t+--------------------------------------+";
-
-                cout << "\n\n\t\t\tNo Items To Display...";
-
-                cin.ignore();
-                cin.get();
-                sm.menu();
             }
         }
     }
